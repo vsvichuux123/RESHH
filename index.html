@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Just For You 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #f9d5e5, #fad0c4);
+      color: #444;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #ff758c;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-size: 3.5em;
+      margin-bottom: 10px;
+      animation: fadeInDown 1.5s ease forwards;
+    }
+    header p {
+      font-size: 1.3em;
+      opacity: 0.9;
+      animation: fadeInUp 1.5s ease forwards;
+      animation-delay: 1s;
+    }
+    nav {
+      background: #fff0f3;
+      padding: 15px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 20px;
+      color: #ff5c77;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #b5314c;
+    }
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    section h2 {
+      color: #ff5c77;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 2em;
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px #ffb6c1;
+    }
+    section p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #5a3e49;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(255,92,119,0.3);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .compliment-btn {
+      display: block;
+      margin: 40px auto;
+      background: #ff5c77;
+      color: white;
+      border: none;
+      border-radius: 40px;
+      padding: 18px 50px;
+      font-size: 1.4em;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(255,92,119,0.5);
+      transition: background 0.3s ease;
+    }
+    .compliment-btn:hover {
+      background: #b5314c;
+    }
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      background: #ff758c;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 -3px 8px rgba(0,0,0,0.1);
+      margin-top: 80px;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hey There, Beautiful 💖</h1>
+    <p>This is a little surprise made just for you.</p>
+  </header>
+
+  <nav>
+    <a href="#about">About You</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#compliment">Compliment</a>
+  </nav>
+
+  <section id="about">
+    <h2>About You</h2>
+    <img src="Screenshot_2023-01-19-23-35-22-109_com.gbwhatsapp.jpg" alt="Her Picture" style="
+      width: 250px;
+      height: auto;
+      border-radius: 20px;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    " />
+    <p>You are an amazing person who lights up the world around you with kindness, laughter, and that beautiful smile. I hope this little website makes you smile today — because you deserve all the happiness in the world.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <img src="IMG_20241111_223758_925.jpg" alt="Beautiful flowers" />
+      <img src="1670658331911.jpg" alt="Sunset over mountains" />
+      <img src="Screenshot_2023-10-21-21-02-30-950_com.whatsapp.jpg" alt="Cute cat" />
+    </div>
+
+    <button onclick="showPopup()" style="
+      margin-top: 40px;
+      background: #a85a74;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    ">Open Secret Message 💌</button>
+  </section>
+
+  <footer>
+    Made with love & 🌸 just for you.
+  </footer>
+
+  <!-- Popup -->
+  <div id="popup" style="
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+  ">
+    <div style="
+      background: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 400px;
+      animation: fadeIn 0.6s ease-out;
+    ">
+      <h2 style="color: #ff5c77;">A Gentle Reminder 🌙</h2>
+      <p style="margin-top: 10px; font-size: 1.1em; color: #444;">
+        Stay pure. Stay kind.<br>
+        And may your heart always be constant — <br>
+        like the moon, even when it's hidden.
+      </p>
+      <button onclick="closePopup()" style="
+        margin-top: 20px;
+        background: #ff5c77;
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        font-size: 1em;
+        border-radius: 30px;
+        cursor: pointer;
+      ">Close</button>
+    </div>
+  </div>
+
+  <!-- Popup script -->
+  <script>
+    function showPopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
